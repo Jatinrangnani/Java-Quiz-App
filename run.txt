@@ -1,0 +1,18 @@
+@echo off
+title Quiz App Setup and Run
+echo ---------------------------------------
+echo Compiling Java files...
+echo ---------------------------------------
+javac -cp ".;lib\mysql-connector-j-9.3.0.jar" *.java
+
+IF %ERRORLEVEL% NEQ 0 (
+    echo Compilation failed. Fix errors and try again.
+    pause
+    exit /b
+)
+
+echo ---------------------------------------
+echo Launching Application...
+echo ---------------------------------------
+java -cp ".;lib\mysql-connector-j-9.3.0.jar" Main
+pause
